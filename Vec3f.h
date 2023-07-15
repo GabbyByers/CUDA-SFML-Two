@@ -16,6 +16,12 @@ public:
         this->z = z;
     }
 
+    Vec3f(int x, int y, int z) {
+        this->x = static_cast<float>(x);
+        this->y = static_cast<float>(y);
+        this->z = static_cast<float>(z);
+    }
+
     Vec3f(const Vec3f& vec3f) {
         x = vec3f.x;
         y = vec3f.y;
@@ -113,5 +119,17 @@ public:
         float len1 = length();
         float len2 = vec3f.length();
         return len1 < len2;
+    }
+
+    Vec3f cross(Vec3f vec3f) {
+        Vec3f C;
+        C.x = (y * vec3f.z) + (z * vec3f.y);
+        C.y = (z * vec3f.x) + (x * vec3f.z);
+        C.z = (x * vec3f.y) + (y * vec3f.x);
+        return C;
+    }
+
+    float dot(Vec3f vec3f) {
+        return (x * vec3f.x) + (y * vec3f.y) + (z * vec3f.z);
     }
 };
