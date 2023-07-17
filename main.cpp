@@ -1,8 +1,8 @@
 #include "kernel.cuh"
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "Vec3f.h"
 #include "Game.h"
-
 
 int main() {
 	Game game(500, 500);
